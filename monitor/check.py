@@ -142,7 +142,7 @@ def send_email_alert(site: dict, result: dict, event: str):
         <p style="margin:0;font-size:13px;color:#9693A8;">{action}</p>
       </div>
       <div style="padding:12px 24px;border-top:1px solid #26262E;font-size:11px;color:#55536A;">
-        SiteWatch · CRIL Infrastructure Monitor · Automated alert
+        SiteWatch · Infrastructure Monitor · Automated alert
       </div>
     </div>
     """
