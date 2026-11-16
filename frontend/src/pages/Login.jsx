@@ -164,7 +164,7 @@ export default function Login({ onLogin }) {
       </div>
 
       <footer className="footer">
-        CRIL &middot; Cyble Research &amp; Intelligence Labs &middot; Internal use only
+        ESME &middot; Security Team &middot; Internal use only
       </footer>
     </div>
   );
