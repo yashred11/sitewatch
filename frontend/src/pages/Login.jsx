@@ -49,7 +49,7 @@ export default function Login({ onLogin }) {
             </svg>
           </div>
           <div className="logo-name">SiteWatch</div>
-          <div className="logo-org">CRIL Infrastructure Monitor</div>
+          <div className="logo-org">ESME Infrastructure Monitor</div>
         </div>
 
         {/* Live status pill */}
@@ -88,7 +88,7 @@ export default function Login({ onLogin }) {
                   id="email"
                   className="field-input"
                   type="email"
-                  placeholder="you@cyble.com"
+                  placeholder="you@ar-ad.com"
                   autoComplete="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
