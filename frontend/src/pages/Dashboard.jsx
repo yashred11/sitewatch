@@ -86,7 +86,7 @@ export default function Dashboard() {
           </div>
           <div>
             <div className="logo-text">SiteWatch</div>
-            <div className="logo-sub">CRIL Infrastructure</div>
+            <div className="logo-sub">Infrastructure</div>
           </div>
         </div>
         <div className="topbar-right">
