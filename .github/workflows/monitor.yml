@@ -1,0 +1,37 @@
+name: SiteWatch Monitor
+
+on:
+  schedule:
+    # Runs every 5 minutes (UTC). GitHub's minimum cron interval.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    # Allows manual trigger from GitHub Actions tab for testing
+
+jobs:
+  check-sites:
+    name: Check all sites
+    runs-on: ubuntu-latest
+    timeout-minutes: 4   # Safety: kill if something hangs before next run
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r monitor/requirements.txt
+
+      - name: Run site checks
+        env:
+          SUPABASE_URL:          ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY:  ${{ secrets.SUPABASE_SERVICE_KEY }}
+          SMTP_USER:             ${{ secrets.SMTP_USER }}
+          SMTP_PASS:             ${{ secrets.SMTP_PASS }}
+          ALERT_TO:              ${{ secrets.ALERT_TO }}
+          GOOGLE_CHAT_WEBHOOK:   ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+        run: python monitor/check.py
