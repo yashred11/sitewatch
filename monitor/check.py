@@ -30,7 +30,7 @@ ALERT_TO         = os.environ["ALERT_TO"]           # Comma-separated recipient 
 GOOGLE_CHAT_WEBHOOK = os.environ.get("GOOGLE_CHAT_WEBHOOK", "")
 
 # Request settings
-TIMEOUT_SECONDS  = 10
+TIMEOUT_SECONDS  = 15
 CHECK_KEYWORD    = ""   # Optional: string that must appear in response body
 
 # ── SUPABASE CLIENT ───────────────────────────────────────────────────────────
